@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrito - Jabones Artesanales</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/components.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <custom-navbar></custom-navbar>
+
+  <main class="container my-5">
+    <h1 class="mb-4">Tu Carrito</h1>
+
+    <div id="carritoContainer"></div>
+
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <div>
+        <button id="vaciarBtn" class="btn btn-outline-danger me-2">Vaciar carrito</button>
+      </div>
+      <div>
+        <button id="procederBtn" class="btn btn-primary">Proceder con el pago</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Dirección -->
+  <div class="modal fade" id="modalDireccion" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-4">
+        <h5>Dirección de envío</h5>
+        <form id="formDireccion" class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Departamento</label>
+            <input type="text" id="departamento" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Ciudad</label>
+            <input type="text" id="ciudad" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Colonia / Residencial</label>
+            <input type="text" id="colonia" class="form-control" required>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Número de casa</label>
+            <input type="text" id="numeroCasa" class="form-control" required>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Bloque</label>
+            <input type="text" id="bloque" class="form-control">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Detalles y referencias</label>
+            <textarea id="detallesDireccion" class="form-control" rows="2"></textarea>
+          </div>
+
+          <div class="col-12 d-flex justify-content-between mt-2">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button id="confirmarDireccionBtn" type="submit" class="btn btn-primary">Confirmar dirección</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Pago -->
+  <div class="modal fade" id="modalPago" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+      <div class="modal-content p-4">
+        <h5>Pago con tarjeta (simulado)</h5>
+        <form id="formPago" class="row g-3">
+          <div class="col-12">
+            <label class="form-label">Nombre en la tarjeta</label>
+            <input type="text" id="cardName" class="form-control" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Número de tarjeta</label>
+            <input type="text" id="cardNumber" class="form-control" pattern="\d{12,19}" placeholder="1234 5678 9012 3456" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Mes / Año</label>
+            <input type="text" id="cardExpiry" class="form-control" placeholder="MM/AA" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label">CVC</label>
+            <input type="text" id="cardCVC" class="form-control" pattern="\d{3,4}" required>
+          </div>
+
+          <div class="col-12 d-flex justify-content-between mt-2">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            <button id="realizarPagoBtn" type="submit" class="btn btn-success">Realizar pago</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Confirmación -->
+  <div class="modal fade" id="modalConfirmacion" tabindex="-1">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content p-4 text-center">
+        <h5>¡Pago exitoso!</h5>
+        <p id="textoConfirmacion">Gracias por tu compra. Se ha enviado un recibo a tu correo (simulado).</p>
+        <button id="cerrarConfirmacionBtn" class="btn btn-primary">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <custom-footer></custom-footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

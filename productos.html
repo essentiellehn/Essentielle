@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Jabones Artesanales</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/components.js" defer></script>
+    <script src="js/productos.js" defer></script>
+</head>
+<body>
+    <custom-navbar></custom-navbar>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Nuestros Productos</h1>
+        <div class="row g-4">
+            <!-- Jabones Personalizables -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <img src="img/jabones.jpg" class="card-img-top" alt="Jabones Personalizables">
+                    <div class="card-body">
+                        <h5 class="card-title">Jabones Personalizables</h5>
+                        <p class="card-text">Elige la base, olores, colores y formas. ¡Crea el jabón perfecto para ti!</p>
+                        <button class="btn btn-primary" onclick="iniciarPersonalizacion()">Personalizar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mini Jabones -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <img src="img/minijabones.jpg" class="card-img-top" alt="Mini Jabones">
+                    <div class="card-body">
+                        <h5 class="card-title">Mini Jabones</h5>
+                        <p class="card-text">Pequeños, decorativos y listos para regalar.</p>
+                        <button class="btn btn-success" onclick="agregarMiniJabon()">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Personalización -->
+    <div class="modal fade" id="modalPersonalizacion" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-4">
+                <div id="pasoPersonalizacion"></div>
+            </div>
+        </div>
+    </div>
+
+    <custom-footer></custom-footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
