@@ -9,31 +9,34 @@
     <script src="js/components.js" defer></script>
     <script src="js/productos.js" defer></script>
 </head>
-<body>
+<body style="background-color:#ECEEFB">
     <custom-navbar></custom-navbar>
 
     <div class="container my-5">
         <h1 class="text-center mb-4">Nuestros Productos</h1>
+        <div class="px-5">
+            <p>En Essentielle cuidamos tu piel con ingredientes que la aman. Trabajamos con bases de glicerina transparente, que hidrata y protege, y colágeno, que brinda firmeza y suavidad. A estas texturas llenas de beneficios les añadimos aromas como cóctel de frutas, coco kiwi, vainilla o caramel coffee, creando sensaciones que acarician los sentidos. Cada jabón es una pieza especial, donde el cuidado, la belleza y el aroma se encuentran para regalarte un momento único cada día.</p>
+        </div>
         <div class="row g-4">
             <!-- Jabones Personalizables -->
             <div class="col-md-6">
-                <div class="card h-100">
-                    <img src="img/jabones.jpg" class="card-img-top" alt="Jabones Personalizables">
+                <div class="card h-100" style="background-color:#c2b8db">
+                    <img src="img/jabones.jpg" class="card-img-top p-3" alt="Jabones Personalizables">
                     <div class="card-body">
                         <h5 class="card-title">Jabones Personalizables</h5>
-                        <p class="card-text">Elige la base, olores, colores y formas. ¡Crea el jabón perfecto para ti!</p>
-                        <button class="btn btn-primary" onclick="iniciarPersonalizacion()">Personalizar</button>
+                        <p class="card-text">Diseñado para ti: el aroma, la forma y el color que hablan de tu esencia.</p>
+                        <button class="btn" style="background-color: #ab9cd1" onclick="iniciarPersonalizacion()">Personalizar</button>
                     </div>
                 </div>
             </div>
             <!-- Mini Jabones -->
             <div class="col-md-6">
-                <div class="card h-100">
-                    <img src="img/minijabones.jpg" class="card-img-top" alt="Mini Jabones">
+                <div class="card h-100" style="background-color:#c2b8db">
+                    <img src="img/minijabones.jpg" class="card-img-top p-3" alt="Mini Jabones">
                     <div class="card-body">
                         <h5 class="card-title">Mini Jabones</h5>
-                        <p class="card-text">Pequeños, decorativos y listos para regalar.</p>
-                        <button class="btn btn-success" onclick="agregarMiniJabon()">Agregar al Carrito</button>
+                        <p class="card-text">Belleza y frescura en tu bolsillo: listo para acompañarte a donde vayas.</p>
+                        <button class="btn" style="background-color: #ab9cd1" onclick="agregarMiniJabon()">Agregar al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -43,7 +46,7 @@
     <!-- Modal de Personalización -->
     <div class="modal fade" id="modalPersonalizacion" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content p-4">
+            <div class="modal-content p-4" style="background-color:#ECEEFB">
                 <div id="pasoPersonalizacion"></div>
             </div>
         </div>

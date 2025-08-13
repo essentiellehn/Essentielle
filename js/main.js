@@ -31,7 +31,7 @@ function renderCarrito() {
 
   if (cart.length === 0) {
     container.innerHTML = `
-      <div class="alert alert-info">Tu carrito está vacío. <a href="productos.html">Ver productos</a></div>
+      <div class="alert" style="background-color:#ab9cd1">Tu carrito está vacío. <a href="productos.html">Ver productos</a></div>
     `;
     return;
   }
