@@ -10,9 +10,9 @@ let seleccion = {
 };
 
 const precios = {
-    base: 3,
-    olorExtra: 1,
-    miniJabon: 2
+    base: 33,
+    olorExtra: 3,
+    miniJabon: 23
 };
 
 function iniciarPersonalizacion() {
@@ -38,10 +38,10 @@ function mostrarPaso() {
             </div>
             <div class="d-flex gap-3 flex-wrap">
                 <button class="opcion ${seleccion.base === 'Glicerina' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarBase('Glicerina', this)">
-                    <img src="img/base-glicerina.png" alt="Glicerina"><br>Glicerina Transparente (Cristal)
+                    Glicerina Transparente (Cristal)
                 </button>
                 <button class="opcion ${seleccion.base === 'Colágeno' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarBase('Colágeno', this)">
-                    <img src="img/base-colageno.png" alt="Colágeno"><br>Colágeno
+                    Colágeno
                 </button>
             </div>
             <div class="mt-3">
@@ -52,11 +52,11 @@ function mostrarPaso() {
     else if (paso === 2) {
         html = `
             <h3>Elige hasta 3 olores</h3>
-            <p>Precio base incluye 1 olor. Cada olor adicional: +$${precios.olorExtra}</p>
+            <p>Precio base incluye 1 olor. ${precios.olorExtra} lempiras extra por cada olor adicional.</p>
             <div class="d-flex gap-3 flex-wrap">
                 ${["Coctel de Frutas", "Coco Kiwi", "Vainilla", "Caramel Coffee"].map(o => `
                     <button class="opcion ${seleccion.olores.includes(o) ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarOlor('${o}', this)">
-                        <img src="img/olor-${o.toLowerCase()}.png" alt="${o}"><br>${o}
+                        ${o}
                     </button>
                 `).join("")}
             </div>
@@ -71,25 +71,28 @@ function mostrarPaso() {
             <h3>Elige el color</h3>
             <div class="d-flex gap-3 flex-wrap">
                 <button class="opcion ${seleccion.color === 'Blanco' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarColor('Blanco', this)">
-                    <img src="img/color-blanco.png"><br>Blanco
+                    <img src="img/color-blanco.jpeg" width="80" height="80"><br>Blanco
                 </button>
                 <button class="opcion ${seleccion.color === 'Rojo' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarColor('Rojo', this)">
-                    <img src="img/color-rojo.png"><br>Rojo
+                    <img src="img/color-rojo.jpeg" width="80" height="80"><br>Rojo
                 </button>
                 <button class="opcion ${seleccion.color === 'Azul' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarColor('Azul', this)">
-                    <img src="img/color-azul.png"><br>Azul
+                    <img src="img/color-azul.jpeg" width="80" height="80"><br>Azul
                 </button>
                 <button class="opcion ${seleccion.color === 'Amarillo' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarColor('Amarillo', this)">
-                    <img src="img/color-amarillo.png"><br>Amarillo
+                    <img src="img/color-amarillo.jpeg" width="80" height="80"><br>Amarillo
                 </button>
                 <button class="opcion ${seleccion.color === 'Celeste' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarColor('Celeste', this)">
-                    <img src="img/color-celeste.png"><br>Celeste
+                    <img src="img/color-celeste.jpeg" width="80" height="80"><br>Celeste
                 </button>
                 <button class="opcion ${seleccion.color === 'Rosado' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarColor('Rosado', this)">
-                    <img src="img/color-rosado.png"><br>Rosado
+                    <img src="img/color-rosado.jpeg" width="80" height="80"><br>Rosado
                 </button>
                 <button class="opcion ${seleccion.color === 'Morado' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarColor('Morado', this)">
-                    <img src="img/color-morado.png"><br>Morado
+                    <img src="img/color-morado.jpeg" width="80" height="80"><br>Morado
+                </button>
+                <button class="opcion ${seleccion.color === 'Verde' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarColor('Verde', this)">
+                    <img src="img/color-verde.jpeg" width="80" height="80"><br>Verde
                 </button>
             </div>
             <div class="mt-3">
@@ -103,22 +106,22 @@ function mostrarPaso() {
             <h3>Elige la forma</h3>
             <div class="d-flex gap-3 flex-wrap">
                 <button class="opcion ${seleccion.forma === 'Rosa Real' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarForma('Rosa Real', this)">
-                    <img src="img/forma-rosa-real.png"><br>Rosa Real
+                    <img src="img/forma-rosa-real.jpeg"><br>Rosa Real
                 </button>
-                <button class="opcion ${seleccion.forma === 'Corazón Encantado' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarForma('Corazón Encantado', this)">
-                    <img src="img/forma-corazon-encantado.png"><br>Corazón Encantado
+                <button class="opcion ${seleccion.forma === 'Capullo del Alba' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarForma('Capullo del Alba', this)">
+                    <img src="img/forma-capullo-alba.jpeg"><br>Capullo del Alba
                 </button>
                 <button class="opcion ${seleccion.forma === 'Flor Radiante' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarForma('Flor Radiante', this)">
-                    <img src="img/forma-flor-radiante.png"><br>Flor Radiante
+                    <img src="img/forma-flor-radiante.jpeg"><br>Flor Radiante
                 </button>
                 <button class="opcion ${seleccion.forma === 'Corona de Luna' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarForma('Corona de Luna', this)">
-                    <img src="img/forma-corona-luna.png"><br>Corona de Luna
+                    <img src="img/forma-corona-luna.jpeg"><br>Corona de Luna
                 </button>
                 <button class="opcion ${seleccion.forma === 'Aurora Floral' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarForma('Aurora Floral', this)">
-                    <img src="img/forma-aurora-floral.png"><br>Aurora Floral
+                    <img src="img/forma-aurora-floral.jpeg"><br>Aurora Floral
                 </button>
                 <button class="opcion ${seleccion.forma === 'Estrella Boreal' ? 'seleccionado' : ''}" style="background-color:#c2b8db" onclick="seleccionarForma('Estrella Boreal', this)">
-                    <img src="img/forma-estrella-boreal.png"><br>Estrella Boreal
+                    <img src="img/forma-estrella-boreal.jpeg"><br>Estrella Boreal
                 </button>
             </div>
             <div class="mt-3">

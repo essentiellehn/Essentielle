@@ -66,7 +66,7 @@ function renderCarrito() {
           <strong>${escapeHtml(nombre)}</strong>
           ${detalleLinea(item)}
         </td>
-        <td class="text-center">$${precioUnit.toFixed(2)}</td>
+        <td class="text-center">L.${precioUnit.toFixed(2)}</td>
         <td class="text-center">
           <div class="d-flex justify-content-center align-items-center">
             <button class="btn btn-sm btn-outline-secondary me-2" onclick="cambiarCantidad(${idx}, -1)">-</button>
@@ -74,7 +74,7 @@ function renderCarrito() {
             <button class="btn btn-sm btn-outline-secondary ms-2" onclick="cambiarCantidad(${idx}, 1)">+</button>
           </div>
         </td>
-        <td class="text-end">$${totalItem.toFixed(2)}</td>
+        <td class="text-end">L.${totalItem.toFixed(2)}</td>
         <td class="text-end">
           <button class="btn btn-sm btn-danger" onclick="quitarItem(${idx})">Quitar</button>
         </td>
@@ -91,9 +91,9 @@ function renderCarrito() {
       <div class="card p-3" style="min-width:260px;">
         <div class="d-flex justify-content-between">
           <strong>Subtotal</strong>
-          <span>$${totalPedido.toFixed(2)}</span>
+          <span>L.${totalPedido.toFixed(2)}</span>
         </div>
-        <div class="text-muted small">Impuestos y envío no calculados (demo)</div>
+        <div class="text-muted small">Impuestos y envío no calculados</div>
       </div>
     </div>
   `;
